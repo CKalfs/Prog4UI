@@ -8,7 +8,6 @@
 
 FILE *fp;
 char storageFile[255] = "storage.txt";
-
 int totalAmountPaid;
 int change;
 int coffee;
@@ -45,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
     S_Configure->addTransition(ui->pbEspresso, &QPushButton::clicked, S_EspressoSelected);
     S_Configure->addTransition(ui->pbCappuccino, &QPushButton::clicked, S_CappuccinoSelected);
     S_Configure->addTransition(ui->pbNo, &QPushButton::clicked, S_Controlpanel);
-    S_Controlpanel->addTransition(ui->pbRestock, &QPushButton::clicked, S_Configure);
+    S_Controlpanel->addTransition(ui->pbRefill, &QPushButton::clicked, S_Configure);
     S_HotchocolateSelected->addTransition(ui->pbYes, &QPushButton::clicked, S_WaitForCoins);
     S_HotchocolateSelected->addTransition(ui->pbNo, &QPushButton::clicked, S_Controlpanel);
     S_EspressoSelected->addTransition(ui->pbYes, &QPushButton::clicked, S_WaitForCoins);
@@ -54,14 +53,12 @@ MainWindow::MainWindow(QWidget *parent)
     S_CappuccinoSelected->addTransition(ui->pbNo, &QPushButton::clicked, S_Controlpanel);
     S_WaitForCoins->addTransition(ui->pb20c, &QPushButton::clicked, S_Process_20C);
     S_WaitForCoins->addTransition(ui->pb50c, &QPushButton::clicked, S_Process_50C);
-
     S_WaitForCoins->addTransition(ui->pbCancel, &QPushButton::clicked, S_GiveBackCoins);
     S_GiveBackCoins->addTransition(ui->pbYes, &QPushButton::clicked, S_Configure);
     S_Process_20C->addTransition(ui->pbYes, &QPushButton::clicked, S_GiveChange);
     S_Process_20C->addTransition(ui->pbNo, &QPushButton::clicked, S_WaitForCoins);
     S_Process_50C->addTransition(ui->pbYes, &QPushButton::clicked, S_GiveChange);
     S_Process_50C->addTransition(ui->pbNo, &QPushButton::clicked, S_WaitForCoins);
-
     S_GiveChange->addTransition(ui->pbYes, &QPushButton::clicked, S_WaitForCoffee);
     S_WaitForCoffee->addTransition(ui->pbCup, &QPushButton::clicked, S_MakeSelectedDrink);
     S_MakeSelectedDrink->addTransition(ui->pbYes, &QPushButton::clicked, S_Done);
@@ -95,7 +92,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(S_GiveBackCoins, &QState::entered, this, &MainWindow::S_GiveBackCoins_onEntry);
     connect(S_Process_20C, &QState::entered, this, &MainWindow::S_Process_20C_onEntry);
     connect(S_Process_50C, &QState::entered, this, &MainWindow::S_Process_50C_onEntry);
-
     connect(S_GiveChange, &QState::entered, this, &MainWindow::S_GiveChange_onEntry);
     connect(S_WaitForCoffee, &QState::entered, this, &MainWindow::S_WaitForCoffee_onEntry);
     connect(S_MakeSelectedDrink, &QState::entered, this, &MainWindow::S_MakeSelectedDrink_onEntry);
@@ -133,7 +129,7 @@ void MainWindow::S_InitialiseSystems_OnEntry(void)
     palette.setColor(palette.Dark, Qt::black);
     ui->lcdInserted->setPalette(palette);
 
-    ui->pbYes->animateClick(); // software trigger to jump to the next state
+    ui->pbYes->animateClick();
 
 }
 
@@ -155,7 +151,7 @@ void MainWindow::S_Configure_onEntry(void)
 void MainWindow::S_Controlpanel_onEntry(void)
 {
     ui->stateLogger->appendPlainText("Entered state S_Controlpanel");
-    ui->userInfo->appendPlainText("Press restock to restock system and go back to main window");
+    ui->userInfo->appendPlainText("Press refill to refill system and go back to main window");
     ui->gbMoney->setVisible(false);
     ui->gbMake->setVisible(false);
     ui->gbControlpanel->setVisible(true);
@@ -249,7 +245,7 @@ void MainWindow::S_GiveBackCoins_onEntry(void)
     ui->userInfo->appendPlainText(QString::number(insertedMoney) = "change have been dispenced");
     insertedMoney = 0;
     ui->lcdInserted->display(insertedMoney);
-    ui->pbYes->animateClick(); // software trigger to jump to the next state
+    ui->pbYes->animateClick();
 }
 
 void MainWindow::S_Process_20C_onEntry(void)
@@ -257,9 +253,9 @@ void MainWindow::S_Process_20C_onEntry(void)
     ui->stateLogger->appendPlainText("Entered state S_Proccess_20C");
     int coin = 20;
     if (handleCoin(coin)){
-        ui->pbYes->animateClick(); // software trigger to jump to the next state
+        ui->pbYes->animateClick();
     }else{
-        ui->pbNo->animateClick(); // software trigger to jump to the next state
+        ui->pbNo->animateClick();
     }
 }
 
@@ -268,9 +264,9 @@ void MainWindow::S_Process_50C_onEntry(void)
     ui->stateLogger->appendPlainText("Entered state S_Proccess_50C");
     int coin = 50;
     if (handleCoin(coin)){
-        ui->pbYes->animateClick(); // software trigger to jump to the next state
+        ui->pbYes->animateClick();
     }else{
-        ui->pbNo->animateClick(); // software trigger to jump to the next state
+        ui->pbNo->animateClick();
     }
 }
 
@@ -373,9 +369,9 @@ void MainWindow::writeFile(int change, int coffee, int amount)
 bool MainWindow::checkChange()
 {
     readFile();
-    int threshold = 100;
+    int checkchange = 100;
 
-    if(change < threshold)
+    if(change < checkchange)
     {
         return false;
     }else

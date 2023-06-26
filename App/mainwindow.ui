@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>393</width>
-    <height>811</height>
+    <width>403</width>
+    <height>709</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,9 +62,9 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QPushButton" name="pbRestock">
+        <widget class="QPushButton" name="pbRefill">
          <property name="text">
-          <string>Restock</string>
+          <string>Refill</string>
          </property>
         </widget>
        </item>

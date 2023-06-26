@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 8.0.1, 2023-06-23T10:21:18. -->
+<!-- Written by QtCreator 8.0.1, 2023-06-26T22:37:41. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -235,8 +235,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/caspe/Documents/ESE-1/Prog4/S2-PROG4-main/S2-PROG4-main/Coffee_Machine_V2/App/Coffee_Machine.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/caspe/Documents/ESE-1/Prog4/S2-PROG4-main/S2-PROG4-main/Coffee_Machine_V2/App/Coffee_Machine.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Coffee_Machine2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/caspe/Documents/ESE-1/Prog4/S2-PROG4-main/S2-PROG4-main/Coffee_Machine_V2/Prog4UI/App/Coffee_Machine.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/caspe/Documents/ESE-1/Prog4/S2-PROG4-main/S2-PROG4-main/Coffee_Machine_V2/Prog4UI/App/Coffee_Machine.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
