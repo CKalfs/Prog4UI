@@ -7,7 +7,7 @@
 
 
 FILE *fp;
-char storageFile[255] = "opslag.txt";
+char storageFile[255] = "storage.txt";
 
 int totalAmountPaid;
 int change;
