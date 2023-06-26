@@ -15,6 +15,65 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
+    <item row="7" column="0">
+     <widget class="QLabel" name="lblUserInfo">
+      <property name="text">
+       <string>User info</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="gbMake">
+      <property name="title">
+       <string>Coffee maker</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QProgressBar" name="progressBar">
+         <property name="value">
+          <number>24</number>
+         </property>
+         <property name="textVisible">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pbCup">
+         <property name="text">
+          <string>Cup</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QPushButton" name="pbExit">
+      <property name="text">
+       <string>E&amp;xit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QGroupBox" name="gbControlpanel">
+      <property name="title">
+       <string>Admin Menu</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QPushButton" name="pbRestock">
+         <property name="text">
+          <string>Restock</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QPlainTextEdit" name="stateLogger"/>
+    </item>
     <item row="2" column="0">
      <widget class="QGroupBox" name="gbMoney">
       <property name="minimumSize">
@@ -83,30 +142,14 @@
       </layout>
      </widget>
     </item>
-    <item row="3" column="0">
-     <widget class="QGroupBox" name="gbControlpanel">
-      <property name="title">
-       <string>Admin Menu</string>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
-        <widget class="QPushButton" name="pbRestock">
-         <property name="text">
-          <string>Restock</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="lblUserInfo">
+    <item row="9" column="0">
+     <widget class="QLabel" name="lblStateLogger">
       <property name="text">
-       <string>User info</string>
+       <string>State logger</string>
       </property>
      </widget>
     </item>
-    <item row="6" column="0">
+    <item row="8" column="0">
      <widget class="QPlainTextEdit" name="userInfo"/>
     </item>
     <item row="0" column="0">
@@ -151,50 +194,7 @@
       </layout>
      </widget>
     </item>
-    <item row="8" column="0">
-     <widget class="QPlainTextEdit" name="stateLogger"/>
-    </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="lblStateLogger">
-      <property name="text">
-       <string>State logger</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QGroupBox" name="gbMake">
-      <property name="title">
-       <string>Coffee maker</string>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QProgressBar" name="progressBar">
-         <property name="value">
-          <number>24</number>
-         </property>
-         <property name="textVisible">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pbCup">
-         <property name="text">
-          <string>Cup</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="9" column="0">
-     <widget class="QPushButton" name="pbExit">
-      <property name="text">
-       <string>E&amp;xit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
+    <item row="12" column="0">
      <widget class="QGroupBox" name="gbHidden">
       <property name="title">
        <string>Hidden</string>
