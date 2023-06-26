@@ -99,7 +99,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(S_GiveChange, &QState::entered, this, &MainWindow::S_GiveChange_onEntry);
     connect(S_WaitForCoffee, &QState::entered, this, &MainWindow::S_WaitForCoffee_onEntry);
     connect(S_MakeSelectedDrink, &QState::entered, this, &MainWindow::S_MakeSelectedDrink_onEntry);
-    connect(S_Done, &QState::entered, this, &MainWindow::S_Done_onEntry);
+    connect(S_Done, &QState::entered, this, &MainWindow::S_Done);
 
     statemachine.start();
 
@@ -312,7 +312,7 @@ void MainWindow::S_MakeSelectedDrink_onEntry(void)
     ui->pbYes->animateClick();
 }
 
-void MainWindow::S_Done_onEntry(void)
+void MainWindow::S_Done(void)
 {
     ui->stateLogger->appendPlainText("Entered state S_Done");
     ui->userInfo->appendPlainText("your coffee is done");

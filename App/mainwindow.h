@@ -38,7 +38,7 @@ private slots:
     void S_GiveChange_onEntry(void);
     void S_WaitForCoffee_onEntry(void);
     void S_MakeSelectedDrink_onEntry(void);
-    void S_Done_onEntry(void);
+    void S_Done(void);
     void readFile(void);
     void writeFile(int change, int coffee, int amount);
     bool checkChange(void);
